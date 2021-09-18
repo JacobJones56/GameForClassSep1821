@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PairedProgrammingGame;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,13 @@ namespace GameForClassSep1821
 {
     class Program
     {
+
         static void Main(string[] args)
         {
+            ProgramUI program = new ProgramUI();
+            program.Run();
         }
     }
 }
+    
+
