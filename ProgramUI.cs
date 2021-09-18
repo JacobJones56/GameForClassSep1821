@@ -180,7 +180,6 @@ namespace PairedProgrammingGame
                     case "1":
                         Console.Clear();
                         validOption1 = true;
-                        checkFrontDoorFirst = true;
                         Console.WriteLine($"You begrudgingly get out of bed to go see who is knocking at your front door.\n" +
                             $"You think to yourself that it better not be {userInfo.FriendName} at this hour. As you open the door,\n" +
                             $"you are shocked to find a small group of strangers lunge towards you. Their eyes are white and they appear\n" +
@@ -305,7 +304,6 @@ namespace PairedProgrammingGame
                                     "You throw open the cabinet and knock over a stack of extra toilet paper." + foundMedicine + "\n" +
                                     "You quickly wrap your arm up with a bandage from the kit. Then, you take the medkit with you as\n" +
                                     "you rush down the hall to your garage.");
-                                hasMedicine = true;
                                 Console.ReadLine();
                             }
                             else
@@ -332,7 +330,14 @@ namespace PairedProgrammingGame
 
             if (fleeHouse)
             {
+                Console.Clear();
                 // you checked the window and ran out grabbing a gym bag...you'll have to ride a bike or go back to get your keys (and die)
+                Console.WriteLine($"You throw open the door to your garage and then slam it shut behind you. Opening up the\n" +
+                    $"gym bag that {userInfo.FriendName} left at your house, you find some clean clothes and shoes. \n" +
+                    $"You quickly get dressed as you decide what to do next. You realize you don't have your car keys and" +
+                    $"you remember that they were in your pants pocket. The pants currently on the floor in your room.\n" +
+                    $"1. Forget the car and grab your bicycle.\n" +
+                    $"2. Go back inside and get your car keys.");
 
                 var userOption4 = Console.ReadLine();
                 var validOption4 = false;
@@ -343,15 +348,27 @@ namespace PairedProgrammingGame
                         case "1":
                             validOption4 = true;
                             Console.Clear();
-                            Console.WriteLine();
+                            Console.WriteLine("You realize that going inside would not be the best idea. You have no idea what is in your\n" +
+                                "house, and you really don't have much desire to find out right now. You hop on your bicycle\n" +
+                                "and open your garage door. The sight of what has become of your neigborhood overwhelms you.\n" +
+                                "Countless, what can only be described as zombies, are shambling all over the streets and yards\n" +
+                                "around your house. You have no idea what is going on, but you know that you don't want to stick\n" +
+                                "stick around to find out. You pedal as fast as you can, carefully avoiding the shambling forms\n" +
+                                "lunging after you.\n" +
+                                "Congratulations! You survived Chapter 1 of Just Another Day! Stay tuned for Chapter 2...");
                             Console.ReadLine();
                             break;
                         case "2":
                             validOption4 = true;
                             Console.Clear();
-                            Console.WriteLine();
+                            Console.WriteLine("You think to yourself that you won't get very far without your car. As dangerous as it may be,\n" +
+                                "you need to go back inside to get your keys. You carefully open your door and creep back into your hallway.\n" +
+                                "You slowly make your way to your bedroom and find your pants on the floor. You reach into the pocket and\n" +
+                                "find your car keys. Your moment of triumph is cut short with the shattering of your bedroom window and moans\n" +
+                                "coming from the hallway. You are quickly surrounded by countless lumbering strangers, desparate to eat you.\n" +
+                                "Game over.");
                             Console.ReadLine();
-                            break;
+                            return;
                         default:
                             Console.WriteLine(wrongAnswer);
                             userOption4 = Console.ReadLine();
@@ -362,7 +379,13 @@ namespace PairedProgrammingGame
 
             if (haveCar)
             {
+                Console.Clear();
                 // Either get in the car and leave or try to grab a gun from the cabinet
+                Console.WriteLine($"You throw the door to your garage open and are immediately relieved to see your car waiting\n" +
+                    $"for you. After taking your first step toward the car, you remember that {userInfo.FriendName} left a handgun\n" +
+                    $"in a cabinet in your garage after going with you to the shooting range last week. That gun may come in handy.\n" +
+                    "1. Get in the car and get out of here.\n" +
+                    "2. Check the cabinet for the gun.");
                 var userOption5 = Console.ReadLine();
                 var validOption5 = false;
                 while (validOption5)
@@ -372,14 +395,45 @@ namespace PairedProgrammingGame
                         case "1":
                             validOption5 = true;
                             Console.Clear();
-                            Console.WriteLine();
+                            Console.WriteLine("You hop in the car, turn on the ignintion, and open up the garage door. As you back out of the garage,\n" +
+                                "the reality of your situation finally hits you. Your neighborhood is crawling with zombies! You've seen them in,\n" +
+                                "movies, shows, and video games, but you never would have imagined seeing them in real life. You step on the gas\n" +
+                                "and try to avoid hitting as many as you can on your way down the street.\n" +
+                                "Congratulations! You survived Chapter 1 of Just Another Day! Stay tuned for Chapter 2...");
                             Console.ReadLine();
                             break;
                         case "2":
                             validOption5 = true;
                             Console.Clear();
-                            Console.WriteLine();
-                            Console.ReadLine();
+                            if (hasBeenHurt)
+                            {
+                                Console.WriteLine($"With all the craziness going on this morning, you can't help but wonder just how much of\n" +
+                                    $"{userInfo.City} is affected by this. You figure that you may need some protection from whatever it is surrounding\n" +
+                                    $"your house. You quickly move to the cabinet on the wall of your garage to find the gun that {userInfo.FriendName} left.\n" +
+                                    $"You are relieved when you see it sitting on the shelf. As you grab it, you are startled by the garage door being slammed\n" +
+                                    $"open and the undead sheriff shambling in. You move to aim the gun, but your bandage gets caught on the door hinge. As you\n" +
+                                    $"struggle to free it, the walking corpse lunges at you and takes a bite out of your shoulder. You fall to the ground as\n" +
+                                    $"several more zombies shuffle into the garage to join in the feast. Game over.");
+                                Console.ReadLine();
+                                return;
+                            }
+                            else
+                            {
+                                Console.WriteLine($"With all the craziness going on this morning, you can't help but wonder just how much of\n" +
+                                    $"{userInfo.City} is affected by this. You figure that you may need some protection from whatever it is surrounding\n" +
+                                    $"your house. You quickly move to the cabinet on the wall of your garage to find the gun that {userInfo.FriendName} left.\n" +
+                                    $"You are relieved when you see it sitting on the shelf. As you grab it, you are startled by the garage door being slammed\n" +
+                                    $"open and the undead sheriff shambling in. You quickly pull the gun up and take aim. You fire the gun and it finds its mark\n" +
+                                    $"right in the chest of the approaching form. You are shocked to see that the shot has no effect and it continues to advance.\n" +
+                                    $"You take another shot, this time aiming for the head. This time the sheriff falls to the ground and stays dead. You don't\n" +
+                                    $"stay to admire your handywork, as the moans from inside your house fortell a dark fate.\n" +
+                                    $"You hop in the car, turn on the ignintion, and open up the garage door. As you back out of the garage,\n" +
+                                    $"the reality of your situation finally hits you. Your neighborhood is crawling with zombies! You've seen them in,\n" +
+                                    $"movies, shows, and video games, but you never would have imagined seeing them in real life. You step on the gas\n" +
+                                    $"and try to avoid hitting as many as you can on your way down the street.\n" +
+                                    $"Congratulations! You survived Chapter 1 of Just Another Day! Stay tuned for Chapter 2...");
+                                Console.ReadLine();
+                            }
                             break;
 
                         default:
@@ -390,8 +444,7 @@ namespace PairedProgrammingGame
                 }
             }
 
-            Console.ReadKey();
-        }
 
+        }
     }
 }
