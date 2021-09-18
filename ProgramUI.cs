@@ -305,6 +305,8 @@ namespace PairedProgrammingGame
                                     "You quickly wrap your arm up with a bandage from the kit. Then, you take the medkit with you as\n" +
                                     "you rush down the hall to your garage.");
                                 Console.ReadLine();
+                                haveCar = true;
+                                break;
                             }
                             else
                             {
@@ -317,8 +319,9 @@ namespace PairedProgrammingGame
                                     "your hallway. The last thing you feel are their teeth sinking into your flesh. You also swear you hear\n" +
                                     "the soft blast of a trumpet. You are dead. Game Over.");
                                 Console.ReadLine();
+                                return;
                             }
-                            return;
+                            
 
                         default:
                             Console.WriteLine(wrongAnswer);
@@ -334,7 +337,7 @@ namespace PairedProgrammingGame
                 // you checked the window and ran out grabbing a gym bag...you'll have to ride a bike or go back to get your keys (and die)
                 Console.WriteLine($"You throw open the door to your garage and then slam it shut behind you. Opening up the\n" +
                     $"gym bag that {userInfo.FriendName} left at your house, you find some clean clothes and shoes. \n" +
-                    $"You quickly get dressed as you decide what to do next. You realize you don't have your car keys and" +
+                    $"You quickly get dressed as you decide what to do next. You realize you don't have your car keys and \n" +
                     $"you remember that they were in your pants pocket. The pants currently on the floor in your room.\n" +
                     $"1. Forget the car and grab your bicycle.\n" +
                     $"2. Go back inside and get your car keys.");
@@ -444,7 +447,8 @@ namespace PairedProgrammingGame
                 }
             }
 
-
+            Console.WriteLine("Thanks for playing!");
+            Console.ReadLine();
         }
     }
 }
