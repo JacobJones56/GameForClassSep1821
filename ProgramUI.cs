@@ -341,7 +341,7 @@ namespace PairedProgrammingGame
 
                 var userOption4 = Console.ReadLine();
                 var validOption4 = false;
-                while (validOption4)
+                while (validOption4 == false)
                 {
                     switch (userOption4)
                     {
@@ -388,7 +388,7 @@ namespace PairedProgrammingGame
                     "2. Check the cabinet for the gun.");
                 var userOption5 = Console.ReadLine();
                 var validOption5 = false;
-                while (validOption5)
+                while (validOption5 == false)
                 {
                     switch (userOption5)
                     {
