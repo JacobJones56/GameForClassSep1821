@@ -50,5 +50,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="UserInfoRepository\UserInfoRepository.csproj">
+      <Project>{BD7C71B9-C855-4942-B33D-258AA32180EB}</Project>
+      <Name>UserInfoRepository</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
