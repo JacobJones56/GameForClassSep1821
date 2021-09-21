@@ -89,6 +89,8 @@ namespace PairedProgrammingGame
         {
             Console.Clear();
 
+            // Some varibles were planned but not used 
+
             // User tools
             var hasGun = false;
             var hasMeleeWeapon = false;
