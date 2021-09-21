@@ -89,7 +89,8 @@ namespace PairedProgrammingGame
         {
             Console.Clear();
 
-            // Some varibles were planned but not used 
+            // Some varibles were planned but not used //
+
 
             // User tools
             var hasGun = false;
@@ -123,6 +124,9 @@ namespace PairedProgrammingGame
 
              branch 3 : short length story
                 user died instantly
+
+           // below is what we used to model/copy and paste stuff so we could keep adding onto our story //
+
         if(){
 
                var userOption# = Console.ReadLine();
