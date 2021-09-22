@@ -127,6 +127,8 @@ namespace PairedProgrammingGame
 
            // below is what we used to model/copy and paste stuff so we could keep adding onto our story //
 
+           // the "#" in the  vaildOption and userOption is replaced with a number for each new prompt but we did realize we didn't need it but just kept the numbers at that point //
+
         if(){
 
                var userOption# = Console.ReadLine();
